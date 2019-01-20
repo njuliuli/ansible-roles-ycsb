@@ -8,7 +8,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'molecule syntax'
+        sh '''docker ps
+molecule syntax'''
       }
     }
   }
