@@ -2,6 +2,7 @@ pipeline {
   agent {
     docker {
       image 'quay.io/ansible/molecule'
+      args '-p 3000:3000'
     }
 
   }
