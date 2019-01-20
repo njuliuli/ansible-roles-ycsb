@@ -8,7 +8,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'molecule converge'
+        sh '''hostname
+pwd
+molecule converge'''
       }
     }
   }
