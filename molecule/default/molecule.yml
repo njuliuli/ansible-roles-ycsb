@@ -11,12 +11,12 @@ platforms:
     # https://www.jeffgeerling.com/blog/2018/testing-your-ansible-roles-molecule
     image: geerlingguy/docker-${MOLECULE_DISTRO:-debian9}-ansible
     command: ${MOLECULE_DOCKER_COMMAND:-""}
-    # # vulnerable to share it with docker,
-    # # causing my host machine session connecting to docker session and reboot my host,
-    # # but not when running on headless remote server
-    # volumes:
-    #   - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    # privileged: true
+    # vulnerable to share it with docker,
+    # causing my host machine session connecting to docker session and reboot my host,
+    # but not when running on headless remote server
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
     pre_build_image: true
 provisioner:
   name: ansible
