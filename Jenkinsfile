@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    node {
-      label 'Local machine'
-    }
-
-  }
+  agent none
   stages {
     stage('Build') {
       steps {
