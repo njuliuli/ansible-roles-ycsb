@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'molecule lint'
+        sh 'molecule converge'
       }
     }
   }
