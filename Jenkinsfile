@@ -8,8 +8,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''pwd
-ls'''
+        sh 'molecule syntax'
       }
     }
   }
