@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'sudo apt install ansible docker'
+        sh 'apt install ansible docker'
         sh '''mkdir -p molecule/default/roles
 ln -sf `pwd` molecule/default/roles/ansible-role-ycsb'''
         sh 'molecule converge'
