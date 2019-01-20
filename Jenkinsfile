@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'quay.io/ansible/molecule'
+      image 'docker'
     }
 
   }
