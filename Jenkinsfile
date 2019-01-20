@@ -6,9 +6,9 @@ pipeline {
 
   }
   stages {
-    stage('molecule test') {
+    stage('Build') {
       steps {
-        sh 'molecule test'
+        sh 'nmp install'
       }
     }
   }
