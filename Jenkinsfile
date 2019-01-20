@@ -8,8 +8,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''hostname
-pwd
+        sh '''pip install ansible --upgrade
 molecule converge'''
       }
     }
