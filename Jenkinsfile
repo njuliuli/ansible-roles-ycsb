@@ -1,15 +1,15 @@
 pipeline {
   agent {
-    docker {
-      image 'quay.io/ansible/molecule'
+    node {
+      label 'Local machine'
     }
 
   }
   stages {
     stage('Build') {
       steps {
-        sh '''docker ps
-molecule syntax'''
+        sh '''pwd
+ls'''
       }
     }
   }
