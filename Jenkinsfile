@@ -8,7 +8,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'molecule converge'
+        sh '''pip install ansible --upgrade
+molecule converge'''
       }
     }
   }
