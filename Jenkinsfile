@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    node {
-      label 'Get latest code'
+    docker {
+      image 'quay.io/ansible/molecule'
     }
 
   }
