@@ -1,14 +1,11 @@
 pipeline {
-  agent {
-    docker {
-      image 'quay.io/ansible/molecule'
-    }
-
-  }
+  agent any
   stages {
-    stage('molecule test') {
+    stage('Build') {
       steps {
-        sh 'molecule test'
+        sh '''mkdir -p molecule/default/roles
+ln -sf `pwd` molecule/default/roles/ansible-role-ycsb
+molecule syntax'''
       }
     }
   }
