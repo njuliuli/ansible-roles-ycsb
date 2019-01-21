@@ -10,7 +10,6 @@ pipeline {
     stage('Build') {
       steps {
         sh '''env
-id
 sudo molecule test'''
       }
     }
