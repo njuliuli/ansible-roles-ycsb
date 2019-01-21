@@ -1,7 +1,8 @@
 pipeline {
   agent {
     docker {
-      image 'paulfantom/debian-molecule'
+      image 'retr0h/molecule'
+      args '-it'
     }
 
   }
@@ -9,7 +10,6 @@ pipeline {
     stage('Build') {
       steps {
         sh '''env
-pwd
 sudo molecule test'''
       }
     }
