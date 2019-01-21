@@ -10,6 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         sh '''env
+pwd
 molecule test'''
       }
     }
