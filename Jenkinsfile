@@ -10,7 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         sh '''env
-molecule converge'''
+molecule test'''
       }
     }
   }
