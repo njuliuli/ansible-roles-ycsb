@@ -5,12 +5,13 @@ pipeline {
       agent {
         docker {
           image 'retr0h/molecule'
-          args '-u molecule:molecule --privileged -v /var/run/docker.sock:/var/run/docker.sock'
+          args '-u li:docker --privileged -v /var/run/docker.sock:/var/run/docker.sock'
         }
 
       }
       steps {
-        sh 'sudo molecule test'
+        sh '''cat /etc/passwd
+sudo molecule test'''
       }
     }
   }
