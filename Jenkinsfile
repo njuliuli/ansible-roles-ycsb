@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       args '--privileged -v /DATA/docker-cache:/docker-cache'
-      image 'alainchiasson/docker-molecule'
+      image 'quay.io/ansible/molecule'
     }
 
   }
