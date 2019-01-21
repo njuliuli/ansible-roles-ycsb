@@ -8,7 +8,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''whoami
+        sh '''env
+docker info
+molecule --version
 molecule converge'''
       }
     }
