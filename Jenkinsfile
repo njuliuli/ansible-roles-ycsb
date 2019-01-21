@@ -9,7 +9,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'molecule test'
+        sh '''mkdir -p molecule/default/roles
+ln -sf `pwd` molecule/default/roles/ansible-role-ycsb
+molecule test'''
       }
     }
   }
