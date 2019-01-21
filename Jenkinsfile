@@ -9,8 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''env
-sudo molecule test'''
+        sh 'sudo molecule test'
       }
     }
   }
