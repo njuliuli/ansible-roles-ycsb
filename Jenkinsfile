@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'retr0h/molecule'
-      args '-it bash'
+      args '-it -bash'
     }
 
   }
