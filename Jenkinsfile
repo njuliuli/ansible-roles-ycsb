@@ -11,6 +11,7 @@ pipeline {
       agent {
         docker {
           image 'retr0h/molecule'
+          args '-u molecule:molecule'
         }
 
       }
