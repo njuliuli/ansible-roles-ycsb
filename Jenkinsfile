@@ -1,8 +1,9 @@
 pipeline {
   agent {
     docker {
-      args '-u root:root -v /var/run/docker.sock:/var/run/docker.sock'
-      image 'paulfantom/debian-molecule'
+      image 'retr0h/molecule'
+      args '''-u root:root \\
+-v /var/run/docker.sock:/var/run/docker.sock'''
     }
 
   }
@@ -10,8 +11,8 @@ pipeline {
     stage('Build') {
       steps {
         sh '''mkdir -p molecule/default/roles
-ln -sf `pwd` molecule/default/roles/ansible-role-ycsb
-molecule test'''
+ln -sf `pwd` molecule/default/roles/ansible-role-ycsb'''
+        sh 'molecule test'
       }
     }
   }
