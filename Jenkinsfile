@@ -15,4 +15,3 @@ ln -sf `pwd` molecule/default/roles/ansible-role-ycsb'''
       }
     }
   }
-}
