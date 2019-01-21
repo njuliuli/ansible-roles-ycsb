@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'quay.io/ansible/molecule'
-      args '-it -v /var/lib/jenkins/jobs/ycsb/branches/test/workspace:/tmp/workspace:ro -v /var/run/docker.sock:/var/run/docker.sock -w /tmp/workspace'
+      args '-i -v /var/lib/jenkins/jobs/ycsb/branches/test/workspace:/tmp/workspace:ro -v /var/run/docker.sock:/var/run/docker.sock -w /tmp/workspace'
     }
 
   }
