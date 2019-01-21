@@ -16,7 +16,7 @@ platforms:
     # but not when running on headless remote server
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    privileged: true
+    # privileged: true
     pre_build_image: true
 provisioner:
   name: ansible
