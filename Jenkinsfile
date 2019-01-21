@@ -9,9 +9,7 @@ pipeline {
     stage('Build') {
       steps {
         sh '''env
-#docker info
-molecule --version
-molecule converge'''
+sudo molecule converge'''
       }
     }
   }
