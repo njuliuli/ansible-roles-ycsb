@@ -5,7 +5,7 @@ pipeline {
       agent {
         docker {
           image 'retr0h/molecule'
-          args '-u li:docker --privileged -v /var/run/docker.sock:/var/run/docker.sock'
+          args '-u 0:0 -v /var/run/docker.sock:/var/run/docker.sock'
         }
 
       }
