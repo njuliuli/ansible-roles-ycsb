@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'retr0h/molecule'
-      args '--privileged -v /var/run/docker.sock:/var/run/docker.sock'
+      args '-v /var/run/docker.sock:/var/run/docker.sock'
     }
 
   }
@@ -10,7 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         sh '''env
-molecule test'''
+sudo molecule test'''
       }
     }
   }
