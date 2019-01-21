@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''pip install ansible --upgrade
+        sh '''whoami
 molecule converge'''
       }
     }
