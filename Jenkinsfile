@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'retr0h/molecule'
-      args '-v `pwd`:/tmp/role:ro -v /var/run/docker.sock:/var/run/docker.sock -w /tmp/role'
+      args '-v /var/lib/jenkins/jobs/ycsb/branches/test/workspace:/tmp/role:ro -v /var/run/docker.sock:/var/run/docker.sock -w /tmp/role'
     }
 
   }
