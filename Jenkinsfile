@@ -10,7 +10,7 @@ pipeline {
       steps {
         sh '''mkdir -p molecule/default/roles
 ln -sf `pwd` molecule/default/roles/ansible-role-ycsb'''
-        sh 'molecule test'
+        sh 'molecule test '
       }
     }
   }
