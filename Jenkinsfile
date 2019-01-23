@@ -8,7 +8,6 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''pip install molecule docker'''
         sh '''mkdir -p molecule/default/roles
 ln -sf `pwd` molecule/default/roles/ansible-role-ycsb'''
         sh 'molecule test'
