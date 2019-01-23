@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'retr0h/molecule'
-      args ' -v /etc/passwd:/etc/passwd:ro -v /var/run/docker.sock:/var/run/docker.sock'
+      args '-v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro -v /var/run/docker.sock:/var/run/docker.sock'
     }
   }
   stages {
