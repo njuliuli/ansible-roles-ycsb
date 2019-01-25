@@ -1,7 +1,8 @@
 pipeline {
   agent {
     dockerfile {
-      additionalBuildArgs  '--build-arg USER=jenkins --build-arg UID=`id -u` --build-arg GROUP=jenkins --build-arg GID=`id -g`'
+      label 'molecule'
+      additionalBuildArgs  '--build-arg UID=`id -u` --build-arg GID=`id -g`'
       args '-v /var/run/docker.sock:/var/run/docker.sock'
     }
   }
