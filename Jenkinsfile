@@ -2,7 +2,7 @@ pipeline {
   agent {
     dockerfile {
       additionalBuildArgs '--tag molecule --build-arg UID=`id -u` --build-arg GID=`id -g`'
-      args '-v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker'
+      args '--privileged -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker'
     }
   }
   stages {
