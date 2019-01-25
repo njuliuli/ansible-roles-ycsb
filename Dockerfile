@@ -1,5 +1,5 @@
 # Using base image of Alpine
-FROM python:alpine
+FROM python:2-alpine
 
 ARG USER=molecule
 ARG GROUP=molecule
@@ -30,7 +30,7 @@ CMD [ "bash" ]
 
 # # ---------------------------------------------------
 # # Using base image of Debian:stretch
-# FROM python:stretch
+# FROM python:2-stretch
 
 # # for apt-get
 # ARG DEBIAN_FRONTEND=noninteractive
