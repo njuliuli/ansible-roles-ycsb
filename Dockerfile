@@ -12,7 +12,7 @@ RUN apk add --no-cache bash
 # ".build-deps" is virtual packages to be deleted afterwards
 RUN apk add --no-cache --virtual .build-deps alpine-sdk build-base gcc libffi-dev linux-headers openssl-dev python-dev
 RUN pip install --upgrade pip && \
-    pip install molecule ansible
+    pip install molecule ansible docker
 # clean up
 RUN apk del .build-deps
 
