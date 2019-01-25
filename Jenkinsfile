@@ -1,8 +1,8 @@
 pipeline {
   agent {
-    docker {
-      image 'retr0h/molecule'
-      args '-v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro -v /var/run/docker.sock:/var/run/docker.sock'
+    dockerfile {
+      additionalBuildArgs  '--build-arg USER=jenkins --build-arg UID=`id -u` --build-arg GROUP=jenkins --build-arg GID=`id -g`'
+      args '-v /var/run/docker.sock:/var/run/docker.sock'
     }
   }
   stages {
@@ -10,7 +10,7 @@ pipeline {
       steps {
         sh '''mkdir -p molecule/default/roles
 ln -sf `pwd` molecule/default/roles/ansible-role-ycsb'''
-        sh 'sudo molecule test'
+        sh 'molecule test'
       }
     }
   }
