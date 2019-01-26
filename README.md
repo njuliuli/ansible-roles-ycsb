@@ -1,7 +1,9 @@
 Role Name
 =========
 
-https://travis-ci.org/njuliuli/ansible-role-ycsb.svg?branch=test
+[![Build Status](https://travis-ci.org/njuliuli/ansible-role-ycsb.svg?branch=test)](https://travis-ci.org/njuliuli/ansible-role-ycsb)
+
+
 
 A brief description of the role goes here.
 
