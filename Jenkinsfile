@@ -10,7 +10,8 @@ pipeline {
       steps {
         sh '''mkdir -p molecule/default/roles
 ln -sf `pwd` molecule/default/roles/ansible-role-ycsb'''
-        sh 'molecule test'
+        // sudo is needed since molecule is installed by sudo pip
+        sh 'sudo molecule test'
       }
     }
   }
