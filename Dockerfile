@@ -6,7 +6,7 @@ ARG GROUP=molecule
 ARG UID=1000
 ARG GID=1000
 
-RUN apk add --no-cache bash
+RUN apk add --no-cache bash docker
 
 # required only for installing pip packages
 # ".build-deps" is virtual packages to be deleted afterwards
