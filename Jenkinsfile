@@ -1,21 +1,17 @@
 pipeline {
   agent {
-    docker {
-      image 'quay.io/ansible/molecule'
-      args '-u root:root -v /var/run/docker.sock:/var/run/docker.sock'
+    dockerfile {
+      additionalBuildArgs '-t molecule --build-arg UID=`id -u` --build-arg GID=`id -g`'
+      args '-v /var/run/docker.sock:/var/run/docker.sock'
     }
   }
   stages {
     stage('Build') {
       steps {
-        sh '''pip install docker'''
-      }
-    }
-    stage('Test') {
-      steps {
         sh '''mkdir -p molecule/default/roles
 ln -sf `pwd` molecule/default/roles/ansible-role-ycsb'''
-        sh 'molecule test'
+        // sudo is needed since molecule is installed by sudo pip
+        sh 'sudo molecule test'
       }
     }
   }
