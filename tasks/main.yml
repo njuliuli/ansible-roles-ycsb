@@ -1,2 +1,30 @@
 ---
 # tasks file for ansible-role-ycsb
+
+- name: install packages needed for ycsb
+  apt:
+    name: default-jdk
+  become: true
+
+# - name: Check if ycsb-0.15.0.tar.gz exist
+#   stat:
+#     path: "/home/{{ ansible_user }}/{{ ycsb }}.tar.gz"
+#   register: result
+
+# - name: download ycsb-0.15.0.tar.gz
+#   get_url:
+#     url: "https://github.com/brianfrankcooper/YCSB/releases/download/0.15.0/{{ ycsb }}.tar.gz"
+#     dest: "/home/{{ ansible_user }}"
+#   when: not result.stat.exists
+
+# - name: Check if ycsb directory exist
+#   stat:
+#     path: "/home/{{ ansible_user }}/{{ ycsb }}"
+#   register: result
+
+# - name: extract ycsb
+#   unarchive:
+#     src: "{{ ycsb }}.tar.gz"
+#     dest: "/home/{{ ansible_user }}"
+#     remote_src: yes
+#   when: not (result.stat.exists and result.stat.isdir)
