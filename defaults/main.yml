@@ -1,6 +1,7 @@
 ---
 # defaults file for ansible-role-ycsb
 
-ycsb: "ycsb-0.15.0"
+ycsbVersion: "0.15.0"
+ycsb: "ycsb-{{ ycsbVersion }}"
 dirHome: "/home/{{ ansible_user }}"
 dirRemote: "{{ dirHome }}/{{ ycsb }}"
